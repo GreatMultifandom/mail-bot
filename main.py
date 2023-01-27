@@ -52,6 +52,6 @@ def init_handler(m):
         bot.reply_to(m, 'This does not look like valid email. Try again!')
         return
     db.set_email(m.from_user.id, m.text)
-    bot.reply_to(m, 'Email saved! Now set your password with /password command, otherwise you wont be able to use it.')    
+    bot.reply_to(m, 'Email saved! Now set your FIRST password with /password command, otherwise you wont be able to use it.\n\nDO NOT use this command second time, change your password ONLINE. This command WONT work second time.')    
 
 bot.infinity_polling()
