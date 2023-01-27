@@ -16,7 +16,7 @@ bot = TeleBot(token)
 def init_handler(m):
     user, status = db.process_user(m.from_user.id)
     db.set_email(m.from_user.id, None)
-    bot.reply_to(m.from_user.id, 'You can send your new email now. Your previous account will remain.')
+    bot.reply_to(m, 'You can send your new email now. Your previous account will remain.')
 
 @bot.message_handler(commands=["start"])
 def init_handler(m):
