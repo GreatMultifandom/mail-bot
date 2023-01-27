@@ -12,6 +12,12 @@ def is_valid_email(email):
 db = Database(mongo_url)
 bot = TeleBot(token)
 
+@bot.message_handler(commands=["new"])
+def init_handler(m):
+    user, status = db.process_user(m.from_user.id)
+    db.set_email(m.from_user.id, None)
+    bot.reply_to(m.from_user.id, 'You can send your new email now. Your previous account will remain.')
+
 @bot.message_handler(commands=["start"])
 def init_handler(m):
     user, status = db.process_user(m.from_user.id)
