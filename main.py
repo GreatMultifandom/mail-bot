@@ -5,7 +5,7 @@ import re
 from subprocess import Popen
 
 def is_valid_email(email):
-    pattern = r'^[a-zA-Z0-9_.+-]+@gmf\.org\.ua$'
+    pattern = r'^[a-zA-Z0-9]+@gmf\.org\.ua$'
     match = re.match(pattern, email)
     return match is not None
 
